@@ -1,15 +1,8 @@
 <script setup lang="ts">
-import { onLoad } from '@dcloudio/uni-app';
 import { storeToRefs } from 'pinia';
-import { useRouter } from 'uni-mini-router';
-import { ref, reactive, computed } from 'vue';
 
 import qq from '@/assets/image/login/QQ@2x.png';
 import wechat from '@/assets/image/login/weChat@2x.png';
-import { NumberEnum } from '@/enums/numberEnum';
-import { login } from '@/services/api/auth';
-import { useAuthStore } from '@/stores/modules/auth';
-import { Toast } from '@/utils/uniapi/prompt';
 
 const authStore = useAuthStore();
 const router = useRouter();
@@ -125,7 +118,7 @@ const handleSendSMS = () => {
             </view>
             <view class="flex h-[100rpx] items-center justify-center gap-1.5" @click="router.push('/pages/register/register')">
                 <text class="text-[28rpx] font-normal text-[#666262]">新用户注册</text>
-                <uni-icons type="right" color="#262424" size="15" />
+                <up-icon name="arrow-right" color="#262424" size="15" />
             </view>
         </view>
         <view class="flex items-center justify-center text-[26rpx] text-[#999393]">其他登录方式</view>
@@ -140,5 +133,6 @@ const handleSendSMS = () => {
 page {
     width: 100%;
     height: 100%;
+    background-color: white;
 }
 </style>

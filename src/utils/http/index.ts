@@ -2,12 +2,8 @@ import AdapterUniapp from '@alova/adapter-uniapp';
 import { createAlova } from 'alova';
 import { assign } from 'lodash-es';
 
-import { ResultEnum } from '@/enums/httpEnum';
-import { NumberEnum } from '@/enums/numberEnum';
 import type { BaseResponse } from '@/services/vo/conmmon';
-import { useAuthStore } from '@/stores/modules/auth';
 import { checkStatus } from '@/utils/http/checkStatus';
-import { Toast } from '@/utils/uniapi/prompt';
 
 /**
  * 请求内置操作

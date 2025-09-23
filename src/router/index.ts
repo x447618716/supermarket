@@ -1,4 +1,3 @@
-import { createRouter } from 'uni-mini-router';
 import type { Route } from 'uni-mini-router/lib/interfaces';
 import pagesJsonToRoutes from 'uni-parse-pages';
 

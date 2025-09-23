@@ -3,10 +3,11 @@ import { defineConfig, loadEnv } from 'vite';
 import { resolve } from 'path';
 import uni from '@dcloudio/vite-plugin-uni';
 import { UnifiedViteWeappTailwindcssPlugin } from 'weapp-tailwindcss/vite';
+import AutoImport from 'unplugin-auto-import/vite';
 import autoprefixer from 'autoprefixer';
 import tailwindcss from '@tailwindcss/postcss';
 import visualizer from 'rollup-plugin-visualizer';
-import basicSsl from '@vitejs/plugin-basic-ssl';
+//import basicSsl from '@vitejs/plugin-basic-ssl';
 
 export default defineConfig(({ mode }) => {
     const root = process.cwd();
@@ -24,7 +25,7 @@ export default defineConfig(({ mode }) => {
                   brotliSize: true // 显示brotli压缩大小
               })
           ]
-        : [basicSsl()];
+        : []; //basicSsl()
     return {
         base: './',
         // 设置路径别名
@@ -63,7 +64,8 @@ export default defineConfig(({ mode }) => {
         css: {
             preprocessorOptions: {
                 scss: {
-                    silenceDeprecations: ['legacy-js-api']
+                    silenceDeprecations: ['legacy-js-api', 'import'],
+                    additionalData: '@import "uview-plus/theme.scss";'
                 }
             },
             postcss: {
@@ -76,6 +78,12 @@ export default defineConfig(({ mode }) => {
             UnifiedViteWeappTailwindcssPlugin({
                 rem2rpx: true,
                 disabled: WeappTailwindcssDisabled
+            }),
+            AutoImport({
+                imports: ['vue', 'uni-app'],
+                dirs: ['./src/services/**', './src/enums/**', './src/hooks/**', './src/stores/modules/**', './src/utils/uniapi/**'],
+                packagePresets: ['uni-mini-router'],
+                dts: true
             }),
             ...plugins
         ]

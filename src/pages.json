@@ -6,6 +6,8 @@
             "path": "pages/home/home",
             "style": {
                 "navigationStyle": "custom",
+                "navigationBarTextStyle": "white",
+                "navigationBarBackgroundColor": "#40AE36",
                 "enablePullDownRefresh": false
             }
         },
@@ -14,8 +16,6 @@
             "path": "pages/login/login",
             "style": {
                 "navigationBarTitleText": "",
-                "navigationBarBackgroundColor": "#fff",
-                "navigationBarTextStyle": "black",
                 "enablePullDownRefresh": false
             },
             "meta": {
@@ -27,8 +27,6 @@
             "path": "pages/register/register",
             "style": {
                 "navigationBarTitleText": "",
-                "navigationBarBackgroundColor": "#fff",
-                "navigationBarTextStyle": "black",
                 "enablePullDownRefresh": false
             },
             "meta": {
@@ -48,30 +46,31 @@
             "path": "pages/cart/cart",
             "style": {
                 "navigationBarTitleText": "购物车",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+                "navigationStyle": "custom"
             }
         },
         {
             "name": "Mine",
             "path": "pages/mine/mine",
             "style": {
+                "navigationStyle": "custom",
                 "navigationBarTitleText": "我的",
                 "enablePullDownRefresh": false
             }
         }
     ],
     "globalStyle": {
-        "navigationBarTextStyle": "white",
-        "navigationBarTitleText": "uniapp 模版项目",
-        "navigationBarBackgroundColor": "#40AE36",
-        "backgroundColor": "#40AE36",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "生鲜超市",
+        "navigationBarBackgroundColor": "#fff",
+        "backgroundColor": "#f8f9fa",
         "navigationStyle": "default",
-        "renderingMode": "seperated",
         "pageOrientation": "portrait"
     },
     "tabBar": {
         "color": "#474747",
-        "selectedColor": "#233CFE",
+        "selectedColor": "#40AE36",
         "backgroundColor": "#FFFFFF",
         "list": [
             {
@@ -103,8 +102,9 @@
     "easycom": {
         "autoscan": true,
         "custom": {
-            "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
-            "^u-(.*)": "uview-plus/components/u-$1/u-$1.vue"
+            "^u--(.*)": "uview-plus/components/u-$1/u-$1.vue",
+            "^up-(.*)": "uview-plus/components/u-$1/u-$1.vue",
+            "^u-([^-].*)": "uview-plus/components/u-$1/u-$1.vue"
         }
     }
 }

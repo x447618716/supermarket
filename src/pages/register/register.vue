@@ -1,11 +1,4 @@
 <script setup lang="ts">
-import { useRouter } from 'uni-mini-router';
-import { ref, reactive, computed } from 'vue';
-
-import { NumberEnum } from '@/enums/numberEnum';
-import { register } from '@/services/api/auth';
-import { Toast } from '@/utils/uniapi/prompt';
-
 const router = useRouter();
 
 const form = reactive<Parameters<typeof register>[0]>({
@@ -114,7 +107,7 @@ const handleSendSMS = () => {
             </view>
             <view class="flex h-[100rpx] items-center justify-center gap-1.5" @click="router.replaceAll('/pages/login/login')">
                 <text class="text-[28rpx] font-normal text-[#666262]">已注册，去登录</text>
-                <uni-icons type="right" color="#262424" size="15" />
+                <u-icon name="arrow-right" color="#262424" size="15" />
             </view>
         </view>
     </view>
@@ -124,5 +117,6 @@ const handleSendSMS = () => {
 page {
     width: 100%;
     height: 100%;
+    background-color: white;
 }
 </style>

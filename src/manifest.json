@@ -1,8 +1,8 @@
 {
-    "name": "union-App",
+    "name": "supermarket",
     "appid": "__UNI__4350F4E",
     "description": "",
-    "versionName": "1.2.1",
+    "versionName": "0.1.0",
     "versionCode": "100",
     "transformPx": false,
     /* 5+App特有相关 */
@@ -69,6 +69,7 @@
             "minified": true
         },
         "usingComponents": true,
+        "mergeVirtualHostAttributes" : true,
         "permission": {},
         "optimization": {
             "subPackages": true

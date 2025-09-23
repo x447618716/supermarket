@@ -184,7 +184,7 @@ module.exports = {
         '@typescript-eslint/no-magic-numbers': [
             'error',
             {
-                ignore: [-1, 0, 1], // 忽略常见基础数字
+                ignore: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 44, 250], // 忽略常见基础数字
                 ignoreEnums: true, // 自动忽略枚举中的数字
                 ignoreArrayIndexes: true, // 忽略数组索引
                 enforceConst: true, // 强制使用const定义

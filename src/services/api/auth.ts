@@ -1,6 +1,3 @@
-import type { LoginDto, RefreshDto, RegisterDto } from '@/services/dto/auth';
-import type { LoginVo } from '@/services/vo/auth';
-import type { BaseResponse } from '@/services/vo/conmmon';
 import request from '@/utils/http';
 
 /**

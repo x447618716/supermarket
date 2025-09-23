@@ -1,7 +1,7 @@
 @import 'weapp-tailwindcss/css';
 @source not "dist";
 page {
-    background-color: #ffffff;
+    background-color: #f8f9fa;
     font-family:
         PingFang SC Regular,
         sans-serif;
@@ -15,6 +15,6 @@ page {
 }
 
 @theme {
+    --font-PingFangSC-Medium: PingFang SC Medium, sans-serif;
     --font-PingFangSC-Semibold: PingFang SC Semibold, sans-serif;
-    --font-PingFangSC-Regular: PingFang SC Regular, sans-serif;
 }
