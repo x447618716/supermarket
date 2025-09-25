@@ -52,8 +52,8 @@ const handleDeleteToCart = () => {
         <u-number-box
             v-model="goodsItem.num"
             icon-style="font-size:12px"
-            button-width="50rpx"
-            button-size="50rpx"
+            button-width="44rpx"
+            button-size="44rpx"
             input-width="20"
             min="1"
             max="99"
@@ -65,7 +65,7 @@ const handleDeleteToCart = () => {
             mini-mode
             integer>
             <template #minus v-if="goodsItem.num === 1">
-                <view class="flex h-[50rpx] w-[50rpx] items-center justify-center rounded-full bg-[#f8f9fa]">
+                <view class="flex h-[44rpx] w-[44rpx] items-center justify-center rounded-[50%] bg-[#f8f9fa]">
                     <up-icon name="minus" color="#323233" size="12" bold @tap="handleDeleteToCart" />
                 </view>
             </template>

@@ -83,7 +83,7 @@ export interface GoodsVo {
     /**
      * 数据类型： 1为商品 2为广告
      */
-    type: string;
+    type: number;
     /**
      * 零售单元 如：箱 | 份 | 盒
      */

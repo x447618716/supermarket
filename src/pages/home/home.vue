@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import throttle from 'lodash-es/throttle';
 
-import zeroOne from '@/assets/image/dish/01@2x.png';
-import zeroTwo from '@/assets/image/dish/02@2x.png';
-import zeroThree from '@/assets/image/dish/03@2x.png';
-import zeroFour from '@/assets/image/dish/04@2x.png';
 import location from '@/assets/image/icon/location@2x.png';
 import message from '@/assets/image/icon/message@2x.png';
 import pullDown from '@/assets/image/icon/pull-down@2x.png';
@@ -146,16 +142,16 @@ const handleScroll = throttle(e => {
                     <view class="font-PingFangSC-Medium text-[30rpx] font-normal text-[#333]">吃好点</view>
                     <view class="font-PingFangSC-Regular pt-1 pb-1.5 text-[24rpx] font-normal text-[#999]">美国小木瓜尝鲜</view>
                     <view class="flex items-center justify-between gap-1">
-                        <image class="h-[130rpx] w-[130rpx]" :src="zeroOne" mode="aspectFill" />
-                        <image class="h-[130rpx] w-[130rpx]" :src="zeroTwo" mode="aspectFill" />
+                        <image class="h-[130rpx] w-[130rpx]" src="http://cdn.xierongsheng.cn/01%402x.png" mode="aspectFill" />
+                        <image class="h-[130rpx] w-[130rpx]" src="http://cdn.xierongsheng.cn/02%402x.png" mode="aspectFill" />
                     </view>
                 </view>
                 <view class="rounded-xl bg-white p-3.5">
                     <view class="font-PingFangSC-Medium text-[30rpx] font-normal text-[#333]">产地量贩</view>
                     <view class="font-PingFangSC-Regular pt-1 pb-1.5 text-[24rpx] font-normal text-[#999]">核桃19.9元/箱</view>
                     <view class="flex items-center justify-between gap-1">
-                        <image class="h-[130rpx] w-[130rpx]" :src="zeroThree" mode="aspectFill" />
-                        <image class="h-[130rpx] w-[130rpx]" :src="zeroFour" mode="aspectFill" />
+                        <image class="h-[130rpx] w-[130rpx]" src="http://cdn.xierongsheng.cn/03%402x.png" mode="aspectFill" />
+                        <image class="h-[130rpx] w-[130rpx]" src="http://cdn.xierongsheng.cn/04%402x.png" mode="aspectFill" />
                     </view>
                 </view>
             </view>
@@ -199,7 +195,7 @@ const handleScroll = throttle(e => {
                 </view>
             </u-sticky>
             <!--商品列表-->
-            <waterfall-goods v-model="goodsList" />
+            <waterfall-goods v-model="goodsList" is-show-ad />
         </view>
     </scroll-view>
 </template>

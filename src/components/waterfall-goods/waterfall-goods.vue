@@ -1,4 +1,13 @@
 <script setup lang="ts">
+const props = withDefaults(
+    defineProps<{
+        isShowAd?: boolean;
+    }>(),
+    {
+        isShowAd: false
+    }
+);
+
 const uWaterfallRef = ref(null);
 const goodsList = defineModel({ required: true, type: Array, default: [] });
 </script>
@@ -26,6 +35,9 @@ const goodsList = defineModel({ required: true, type: Array, default: [] });
                             <stepper :goods="item" />
                         </view>
                     </view>
+                </template>
+                <template v-else>
+                    <u-lazy-load v-if="props.isShowAd" class="mb-2 w-full" threshold="-450" :image="item.image" :index="item.id" :key="item.id" />
                 </template>
             </template>
         </template>
