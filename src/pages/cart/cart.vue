@@ -85,7 +85,7 @@ const handleScrolltolower = () => {
                                 <text class="text-[22rpx] text-[#F55726]">￥</text>
                                 <text class="text-[32rpx] text-[#F55726]">{{ item.price / 10 }}</text>
                             </view>
-                            <stepper :goods="item" :is-show-cart-icon="false" :is-show-delete-tips="true" />
+                            <x-stepper :goods="item" :is-show-cart-icon="false" :is-show-delete-tips="true" />
                         </view>
                     </view>
                 </view>
@@ -103,9 +103,9 @@ const handleScrolltolower = () => {
                 </view>
             </template>
         </view>
-        <title-bar title="为你推荐" />
+        <x-title-bar title="为你推荐" />
         <!--商品列表-->
-        <waterfall-goods v-model="goodsList" />
+        <x-waterfall-goods v-model="goodsList" />
     </scroll-view>
     <view class="flex h-[100rpx] w-full items-center justify-between bg-white p-[20rpx_30rpx]">
         <u-checkbox label="全选" v-model:checked="isSelectAll" shape="circle" active-color="#40AE36" used-alone />

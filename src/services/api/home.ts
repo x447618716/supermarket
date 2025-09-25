@@ -27,5 +27,8 @@ export const goodsRecommend = () => request.Get<BaseResponse<RecommendVo>>('/goo
  * */
 export const goodsItems = (data: GoodsItemsDto) =>
     request.Get<BaseResponse<GoodsItemsVo>>('/goods/items', {
-        params: data
+        params: data,
+        meta: {
+            debounce: false
+        }
     });

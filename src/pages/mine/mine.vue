@@ -160,8 +160,8 @@ onReachBottom(() => {
                 </view>
             </view>
         </view>
-        <title-bar title="为你推荐" />
+        <x-title-bar title="为你推荐" />
         <!--商品列表-->
-        <waterfall-goods v-model="goodsList" />
+        <x-waterfall-goods v-model="goodsList" />
     </view>
 </template>

@@ -9,7 +9,7 @@ const props = withDefaults(
 );
 
 const uWaterfallRef = ref(null);
-const goodsList = defineModel({ required: true, type: Array, default: [] });
+const goodsList = defineModel<GoodsVo[]>({ required: true, type: Array, default: [] });
 </script>
 
 <template>
@@ -18,7 +18,7 @@ const goodsList = defineModel({ required: true, type: Array, default: [] });
             <template v-for="item in colList">
                 <template v-if="item.type === 1">
                     <view class="mb-2 flex flex-col gap-2 rounded-xl bg-white p-2" :key="item.id">
-                        <u-lazy-load class="w-full" threshold="-450" :image="item.image" :index="item.id" />
+                        <u-lazy-load class="w-full" threshold="150" :image="item.image" :index="item.id" />
                         <view class="font-PingFangSC-Medium text-[26rpx] font-normal text-[#333]">
                             {{ item.title }}
                         </view>
@@ -32,12 +32,12 @@ const goodsList = defineModel({ required: true, type: Array, default: [] });
                                 <text class="text-[32rpx] text-[#F55726]">{{ item.price / 10 }}</text>
                                 <text class="text-[22rpx] text-[#999]">/{{ item.unit }}</text>
                             </view>
-                            <stepper :goods="item" />
+                            <x-stepper :goods="item" />
                         </view>
                     </view>
                 </template>
                 <template v-else>
-                    <u-lazy-load v-if="props.isShowAd" class="mb-2 w-full" threshold="-450" :image="item.image" :index="item.id" :key="item.id" />
+                    <u-lazy-load v-if="props.isShowAd" class="mb-2 w-full" threshold="150" :image="item.image" :index="item.id" :key="item.id" />
                 </template>
             </template>
         </template>

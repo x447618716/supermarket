@@ -68,7 +68,7 @@ const handleScroll = (e: EventHandle) => {
             </view>
         </template>
         <template #right>
-            <cart-icon />
+            <x-cart-icon />
         </template>
     </u-navbar>
     <view class="relative flex w-full" :style="{ height: `calc(100% - 44px - ${statusBarHeight}px)` }">
@@ -83,11 +83,11 @@ const handleScroll = (e: EventHandle) => {
             </view>
         </scroll-view>
         <scroll-view class="size-full bg-white" :scroll-y="show" @scroll="handleScroll" @scrolltolower="handleScrolltolower">
-            <view v-if="!show" class="absolute z-50 size-full bg-[rgba(0,0,0,0.2)]" :style="{ top: `${scrollTop}px` }" @click="show = !show">
+            <view v-show="!show" class="absolute z-1000 size-full bg-[rgba(0,0,0,0.2)]" :style="{ top: `${scrollTop}px` }" @tap="show = !show">
                 <view class="w-full bg-white">
                     <view class="flex items-center justify-between p-2">
                         <view class="font-PingFangSC-Medium text-[26rpx] font-normal text-[#333]">全部分类</view>
-                        <up-icon name="arrow-up" @tap="show = !show" />
+                        <up-icon name="arrow-up" />
                     </view>
                     <view class="flex flex-wrap gap-2 p-2">
                         <view
@@ -101,60 +101,26 @@ const handleScroll = (e: EventHandle) => {
                     </view>
                 </view>
             </view>
-            <view class="w-full">
-                <u-sticky v-show="show" custom-nav-height="0">
-                    <view class="flex items-center justify-between">
-                        <!--                        <scroll-view class="w-full" scroll-x style="white-space: nowrap">-->
-                        <!--                            <u-tag v-for="(item, index) in list" :text="item" :key="index"/>-->
-                        <!--                        </scroll-view>-->
-                        <!--                        <u-scroll-list :indicator="false">-->
-                        <!--                            <u-tag v-for="(item, index) in list" :text="item" :key="index"/>-->
-                        <!--                        </u-scroll-list>-->
-
-                        <view class="flex h-[80rpx] flex-wrap gap-2 overflow-hidden bg-[#FAFAFA] p-2">
+            <view>
+                <u-sticky custom-nav-height="0">
+                    <view class="flex items-center justify-between bg-white p-2">
+                        <scroll-view :scroll-into-view="`z${currentLabel}`" scroll-with-animation class="w-[520rpx]" scroll-x style="white-space: nowrap">
                             <view
-                                class="w-fit rounded-[6rpx] p-1 text-[24rpx] font-normal"
+                                :id="`z${index}`"
+                                class="mr-2 inline-block w-fit rounded-[6rpx] p-1 text-[24rpx] font-normal"
                                 :class="[currentLabel === index ? 'bg-[#D9EFD7] text-[#333]' : 'bg-[#EDEFF2] text-[#666]']"
                                 v-for="(item, index) in list"
                                 :key="index"
                                 @tap="currentLabel = index">
                                 {{ item }}
                             </view>
-                        </view>
-                        <view class="flex items-center justify-center bg-white p-3">
-                            <up-icon name="arrow-down" @tap="show = !show" />
+                        </scroll-view>
+                        <view class="flex items-center justify-center pl-2 shadow-[-1px_0_0_0_#E5E2E2]">
+                            <u-icon name="arrow-down" @tap="show = !show" />
                         </view>
                     </view>
                 </u-sticky>
-                <template v-for="item in goodsList">
-                    <template v-if="item.type === 1">
-                        <view class="flex items-center" :key="item.id">
-                            <view class="p-2">
-                                <u-lazy-load class="h-[165rpx] w-[165rpx]" threshold="-450" :image="item.image" :index="item.id" />
-                            </view>
-                            <view class="flex min-h-[248rpx] flex-1 flex-col justify-between border-b border-b-[#EBEBEB] p-2">
-                                <view>
-                                    <view class="font-PingFangSC-Medium text-[26rpx] font-normal text-[#333]">{{ item.name }}</view>
-                                    <view class="text-[22rpx] font-normal text-[#999]">有机食品 | 水果</view>
-                                </view>
-                                <view>
-                                    <view class="flex items-center gap-2">
-                                        <view class="border border-[#F55726] p-0.5 text-[18rpx] text-[#F55726]">特价</view>
-                                        <view class="border border-[#40AE36] p-0.5 text-[18rpx] text-[#40AE36]">24小时发货</view>
-                                    </view>
-                                    <view class="flex items-center justify-between">
-                                        <view class="font-PingFangSC-Medium font-normal">
-                                            <text class="text-[22rpx] text-[#F55726]">￥</text>
-                                            <text class="text-[32rpx] text-[#F55726]">{{ item.price / 10 }}</text>
-                                            <text class="text-[22rpx] text-[#999]">/{{ item.unit }}</text>
-                                        </view>
-                                        <stepper :goods="item" />
-                                    </view>
-                                </view>
-                            </view>
-                        </view>
-                    </template>
-                </template>
+                <x-goods-list :goods-list="goodsList" />
             </view>
         </scroll-view>
     </view>

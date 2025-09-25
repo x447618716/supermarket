@@ -67,7 +67,7 @@ const handleScroll = throttle(e => {
 </script>
 
 <template>
-    <status-bar />
+    <x-status-bar />
     <view class="flex h-[88rpx] w-full items-center justify-between bg-[#40AE36] p-2">
         <view class="flex items-center gap-1">
             <image class="h-5 w-5" :src="location" mode="aspectFill" />
@@ -131,7 +131,7 @@ const handleScroll = throttle(e => {
                         <view class="font-PingFangSC-Regular line-clamp-1 text-[24rpx] font-normal text-[#666]">{{ item.name }}</view>
                         <view class="flex items-center justify-between">
                             <view class="line-clamp-1 font-PingFangSC-Medium text-[22rpx] font-normal text-[#F55726]">￥{{ item.price / 10 }}</view>
-                            <number-add :goods="item" />
+                            <x-number-add :goods="item" />
                         </view>
                     </view>
                 </view>
@@ -195,7 +195,7 @@ const handleScroll = throttle(e => {
                 </view>
             </u-sticky>
             <!--商品列表-->
-            <waterfall-goods v-model="goodsList" is-show-ad />
+            <x-waterfall-goods v-model="goodsList" is-show-ad />
         </view>
     </scroll-view>
 </template>
