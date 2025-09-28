@@ -61,7 +61,7 @@
     "quickapp": {},
     /* 小程序特有相关 */
     "mp-weixin": {
-        "appid": "wx8d93f377eecbe1a9",
+        "appid": "",
         "setting": {
             "urlCheck": false,
             "es6": true,
@@ -99,7 +99,7 @@
             "base": "./"
         },
         "devServer": {},
-        "title": "福海创-用户端",
+        "title": "生鲜超市",
         "unipush": {
             "enable": false
         },
