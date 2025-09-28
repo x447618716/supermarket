@@ -72,6 +72,6 @@ const handleDeleteToCart = () => {
         </u-number-box>
     </template>
     <template v-else>
-        <image v-if="isShowCartIcon" class="h-[44rpx] w-[44rpx]" :src="cart" mode="aspectFill" @tap="handleAddToCart" />
+        <image v-if="isShowCartIcon" class="h-[44rpx] w-[44rpx]" :src="cart" mode="aspectFill" @tap.stop="handleAddToCart" />
     </template>
 </template>

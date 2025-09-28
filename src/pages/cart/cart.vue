@@ -69,7 +69,11 @@ const handleScrolltolower = () => {
         @scrolltolower="handleScrolltolower">
         <view class="w-full rounded-xl bg-white">
             <template v-if="cartList.length">
-                <view class="flex items-center justify-between gap-1.5 p-[20rpx_30rpx]" v-for="item in cartList" :key="item.id">
+                <view
+                    class="flex items-center justify-between gap-1.5 p-[20rpx_30rpx]"
+                    v-for="item in cartList"
+                    :key="item.id"
+                    @tap="router.push({ path: '/pages/goods-details/goods-details', query: { id: item.id } })">
                     <u-checkbox v-model:checked="item.select" shape="circle" active-color="#40AE36" used-alone />
                     <image class="h-[160rpx] w-[160rpx]" :src="item.image" mode="aspectFit" />
                     <view class="flex flex-1 flex-col gap-1.5">

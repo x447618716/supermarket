@@ -28,7 +28,7 @@ const handleAddToCart = () => {
 </script>
 
 <template>
-    <view class="relative h-[44rpx] w-[44rpx]" @click="handleAddToCart">
+    <view class="relative h-[44rpx] w-[44rpx]" @tap.stop="handleAddToCart">
         <u-badge class="z-10" max="99" absolute :offset="[-5, -5]" :value="goodsItem?.num ?? 0" />
         <image class="size-full" :src="cart" mode="aspectFill" />
     </view>

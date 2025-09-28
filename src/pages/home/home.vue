@@ -130,7 +130,11 @@ const handleGetGoodsItems = () => {
                 <view class="text-[24rpx] font-normal text-[#40AE36]">查看更多</view>
             </view>
             <view class="flex justify-between">
-                <view class="flex w-[176rpx] flex-col gap-1" v-for="item in recommend?.items" :key="item.id">
+                <view
+                    class="flex w-[176rpx] flex-col gap-1"
+                    v-for="item in recommend?.items"
+                    :key="item.id"
+                    @tap="router.push({ path: '/pages/goods-details/goods-details', query: { id: item.id } })">
                     <image class="h-[176rpx] w-[176rpx]" :src="item.image" mode="aspectFill" />
                     <view class="font-PingFangSC-Regular line-clamp-1 text-[24rpx] font-normal text-[#666]">{{ item.name }}</view>
                     <view class="flex items-center justify-between">

@@ -107,7 +107,7 @@ onReachBottom(() => {
             </view>
         </view>
     </view>
-    <view class="m-auto w-11/12 transform-[translateY(-170rpx)]">
+    <view class="m-auto w-11/12 transform-[translateY(-120rpx)]">
         <view class="w-full rounded-xl bg-white pt-3 pb-3">
             <u-cell title="我的订单" value="全部订单" :border="false" is-link />
             <view class="flex items-center justify-around p-3">

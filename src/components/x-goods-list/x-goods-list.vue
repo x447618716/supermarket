@@ -5,12 +5,14 @@ const props = withDefaults(
     }>(),
     {}
 );
+
+const router = useRouter();
 </script>
 
 <template>
     <template v-for="item in props.goodsList">
         <template v-if="item.type === 1">
-            <view class="flex items-center" :key="item.id">
+            <view class="flex items-center" :key="item.id" @tap="router.push({ path: '/pages/goods-details/goods-details', query: { id: item.id } })">
                 <view class="p-2">
                     <u-lazy-load class="h-[165rpx] w-[165rpx]" threshold="150" :image="item.image" :index="item.id" />
                 </view>

@@ -82,6 +82,14 @@
                 "navigationStyle": "custom",
                 "enablePullDownRefresh": false
             }
+        },
+        {
+            "name": "GoodsDetails",
+            "path": "pages/goods-details/goods-details",
+            "style": {
+                "navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
         }
     ],
     "globalStyle": {

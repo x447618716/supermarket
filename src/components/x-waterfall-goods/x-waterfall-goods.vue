@@ -8,6 +8,8 @@ const props = withDefaults(
     }
 );
 
+const router = useRouter();
+
 const uWaterfallRef = ref(null);
 const goodsList = defineModel<GoodsVo[]>({ required: true, type: Array, default: [] });
 </script>
@@ -17,7 +19,10 @@ const goodsList = defineModel<GoodsVo[]>({ required: true, type: Array, default:
         <template v-slot:column="{ colList }">
             <template v-for="item in colList">
                 <template v-if="item.type === 1">
-                    <view class="mb-2 flex flex-col gap-2 rounded-xl bg-white p-2" :key="item.id">
+                    <view
+                        class="mb-2 flex flex-col gap-2 rounded-xl bg-white p-2"
+                        :key="item.id"
+                        @tap="router.push({ path: '/pages/goods-details/goods-details', query: { id: item.id } })">
                         <u-lazy-load class="w-full" threshold="150" :image="item.image" :index="item.id" />
                         <view class="font-PingFangSC-Medium text-[26rpx] font-normal text-[#333]">
                             {{ item.title }}
