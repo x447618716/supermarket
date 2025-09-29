@@ -1,8 +1,6 @@
-## 使用
+## 项目预览
 
-```bash
- npx degit x447618716/vite-template-uniapp-vue3-ts#main my-project
-```
+
 
 ## 开发建议
 

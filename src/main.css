@@ -17,4 +17,5 @@ page {
 @theme {
     --font-PingFangSC-Medium: PingFang SC Medium, sans-serif;
     --font-PingFangSC-Semibold: PingFang SC Semibold, sans-serif;
+    --font-PingFangSC-Light: PingFang SC Light, sans-serif;
 }

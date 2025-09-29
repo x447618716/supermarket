@@ -1,9 +1,4 @@
 <script setup lang="ts">
-interface Sku {
-    num: number;
-    selectedText: string;
-}
-
 interface SwiperType {
     current: number;
 }
@@ -21,75 +16,6 @@ const list6 = ref([
 ]);
 const currentNum = ref(0);
 
-// 商品信息
-const goodsInfo = ref({
-    image: 'https://picsum.photos/200/200',
-    price: 99.0,
-    stock: 100
-});
-
-// SKU树形结构
-const skuTree = ref([
-    {
-        label: '颜色',
-        name: 'color',
-        children: [
-            { id: 1, name: '红色' },
-            { id: 2, name: '蓝色' },
-            { id: 3, name: '黑色' }
-        ]
-    },
-    {
-        label: '尺寸',
-        name: 'size',
-        children: [
-            { id: 1, name: 'S' },
-            { id: 2, name: 'M' },
-            { id: 3, name: 'L' },
-            { id: 4, name: 'XL' }
-        ]
-    }
-]);
-
-// SKU列表
-const skuList = ref([
-    {
-        id: 1,
-        color: 1,
-        size: 1,
-        price: 99.0,
-        stock: 50
-    },
-    {
-        id: 2,
-        color: 1,
-        size: 2,
-        price: 99.0,
-        stock: 40
-    },
-    {
-        id: 3,
-        color: 2,
-        size: 1,
-        price: 109.0,
-        stock: 30
-    },
-    {
-        id: 4,
-        color: 2,
-        size: 3,
-        price: 109.0,
-        stock: 20
-    },
-    {
-        id: 5,
-        color: 3,
-        size: 4,
-        price: 89.0,
-        stock: 60
-    }
-]);
-
 onLoad(() => {
     console.log(props.id);
 });
@@ -97,20 +23,15 @@ onLoad(() => {
 const handleSwiperChange = (e: SwiperType) => {
     currentNum.value = e.current;
 };
-
-const confirmSku = (e: Sku) => {
-    void uni.showToast({
-        title: `选择了: ${e.selectedText}, 数量: ${e.num}`,
-        icon: 'none'
-    });
-};
 </script>
 
 <template>
     <u-navbar auto-back fixed placeholder bg-color="#fff">
         <template #center>
             <view class="flex w-full items-center justify-end gap-1 p-2.5">
-                <u-icon name="share-square" size="24" color="rgb(144, 147, 153)" />
+                <x-goods-share>
+                    <u-icon name="share-square" size="24" color="rgb(144, 147, 153)" />
+                </x-goods-share>
                 <x-cart-icon @tap="router.pushTab('/pages/cart/cart')" />
             </view>
         </template>
@@ -156,11 +77,9 @@ const confirmSku = (e: Sku) => {
             <view class="font-PingFangSC-Medium text-[26rpx] text-[#333]">已选</view>
             <view class="text-[26rpx] text-[#333]">0.5kg/份</view>
         </view>
-        <u-goods-sku :goods-info="goodsInfo" :sku-tree="skuTree" :sku-list="skuList" :max-buy="10" @confirm="confirmSku">
-            <template #trigger>
-                <u-icon name="arrow-right" size="14" />
-            </template>
-        </u-goods-sku>
+        <x-goods-sku :id="props.id">
+            <u-icon name="arrow-right" size="14" />
+        </x-goods-sku>
     </view>
 
     <view class="m-auto mt-3 flex w-11/12 items-center justify-between rounded-xl bg-white p-3">
@@ -168,7 +87,7 @@ const confirmSku = (e: Sku) => {
             <text>用户评价</text>
             <text class="text-[22rpx] text-[#999]">(1560)</text>
         </view>
-        <view class="flex items-center gap-1">
+        <view class="flex items-center gap-1" @tap="router.push({ path: '/pages/comment/comment', query: { id: props.id } })">
             <view class="text-[24rpx] text-[#666]">查看全部</view>
             <u-icon name="arrow-right" size="14" />
         </view>

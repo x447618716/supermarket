@@ -90,6 +90,14 @@
                 "navigationStyle": "custom",
                 "enablePullDownRefresh": false
             }
+        },
+        {
+            "name": "Comment",
+            "path": "pages/comment/comment",
+            "style": {
+                "navigationBarTitleText": "用户评价",
+                "enablePullDownRefresh": false
+            }
         }
     ],
     "globalStyle": {
