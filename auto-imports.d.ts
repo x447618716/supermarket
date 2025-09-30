@@ -102,9 +102,11 @@ declare global {
     const toValue: (typeof import('vue'))['toValue'];
     const triggerRef: (typeof import('vue'))['triggerRef'];
     const unref: (typeof import('vue'))['unref'];
+    const useAddressStore: (typeof import('./src/stores/modules/address'))['useAddressStore'];
     const useAttrs: (typeof import('vue'))['useAttrs'];
     const useAuthStore: (typeof import('./src/stores/modules/auth'))['useAuthStore'];
     const useCartStore: (typeof import('./src/stores/modules/cart'))['useCartStore'];
+    const useCouponsStore: (typeof import('./src/stores/modules/coupon'))['useCouponsStore'];
     const useCssModule: (typeof import('vue'))['useCssModule'];
     const useCssVars: (typeof import('vue'))['useCssVars'];
     const useGetWindowInfo: (typeof import('./src/hooks/useGetWindowInfo'))['useGetWindowInfo'];

@@ -18,9 +18,10 @@ export const useCartStore = defineStore(
 
         const isSelectItem = computed(() => cartList.value.some(item => item.select));
 
+        const cartSelectList = computed(() => cartList.value.filter(item => item.select));
+
         const totalPrice = computed(() => {
-            const selectItemALL = cartList.value.filter(item => item.select);
-            return selectItemALL.reduce((result, item) => result + item.price, 0);
+            return cartSelectList.value.reduce((result, item) => result + item.price * item.num, 0);
         });
 
         const addCart = (item: GoodsVo) => {
@@ -44,6 +45,7 @@ export const useCartStore = defineStore(
 
         return {
             cartList,
+            cartSelectList,
             isSelectItem,
             totalPrice,
             addCart,

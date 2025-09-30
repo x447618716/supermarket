@@ -59,6 +59,14 @@ const handleScrolltolower = () => {
         handleGetGoodsItems();
     }
 };
+
+const handleOrderConfirm = () => {
+    if (totalPrice.value > 0) {
+        router.push('/pages/order-confirm/order-confirm');
+    } else {
+        Toast('请选择商品进行结算!');
+    }
+};
 </script>
 <template>
     <u-navbar left-icon :title="navBerTitle" :fixed="false" right-text="删除" @right-click="handleDeleteGoodsItem" />
@@ -120,7 +128,8 @@ const handleScrolltolower = () => {
                 <text class="font-PingFangSC-Semibold text-[32rpx]">{{ totalPrice / 10 }}</text>
             </view>
             <view
-                class="flex h-[70rpx] w-[178rpx] items-center justify-center rounded-3xl bg-[#40AE36] font-PingFangSC-Medium text-[26rpx] font-normal text-white">
+                class="flex h-[70rpx] w-[178rpx] items-center justify-center rounded-3xl bg-[#40AE36] font-PingFangSC-Medium text-[26rpx] font-normal text-white"
+                @tap="handleOrderConfirm">
                 去结算
             </view>
         </view>

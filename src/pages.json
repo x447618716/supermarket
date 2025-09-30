@@ -98,6 +98,14 @@
                 "navigationBarTitleText": "用户评价",
                 "enablePullDownRefresh": false
             }
+        },
+        {
+            "name": "OrderConfirm",
+            "path": "pages/order-confirm/order-confirm",
+            "style": {
+                "navigationBarTitleText": "确认订单",
+                "enablePullDownRefresh": false
+            }
         }
     ],
     "globalStyle": {
