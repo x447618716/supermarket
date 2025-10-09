@@ -64,7 +64,7 @@ export default defineConfig(({ mode }) => {
         css: {
             preprocessorOptions: {
                 scss: {
-                    silenceDeprecations: ['legacy-js-api', 'import'],
+                    silenceDeprecations: ['legacy-js-api', 'import', 'mixed-decls'],
                     additionalData: '@import "uview-plus/theme.scss";'
                 }
             },
@@ -83,7 +83,7 @@ export default defineConfig(({ mode }) => {
                 imports: ['vue', 'uni-app'],
                 dirs: ['./src/services/**', './src/enums/**', './src/hooks/**', './src/stores/modules/**', './src/utils/uniapi/**'],
                 packagePresets: ['uni-mini-router'],
-                dts: true
+                dts: 'types/auto-imports.d.ts'
             }),
             ...plugins
         ]

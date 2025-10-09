@@ -6,20 +6,20 @@
 // biome-ignore lint: disable
 export {}
 declare global {
-    const ActionSheet: (typeof import('./src/utils/uniapi/prompt'))['ActionSheet'];
-    const CURRENT_PLATFORM: (typeof import('./src/enums/platformEnum'))['CURRENT_PLATFORM'];
-    const ContentTypeEnum: (typeof import('./src/enums/httpEnum'))['ContentTypeEnum'];
+    const ActionSheet: (typeof import('../src/utils/uniapi/prompt'))['ActionSheet'];
+    const CURRENT_PLATFORM: (typeof import('../src/enums/platformEnum'))['CURRENT_PLATFORM'];
+    const ContentTypeEnum: (typeof import('../src/enums/httpEnum'))['ContentTypeEnum'];
     const EffectScope: (typeof import('vue'))['EffectScope'];
-    const HideLoading: (typeof import('./src/utils/uniapi/prompt'))['HideLoading'];
-    const HideToast: (typeof import('./src/utils/uniapi/prompt'))['HideToast'];
-    const Loading: (typeof import('./src/utils/uniapi/prompt'))['Loading'];
-    const Modal: (typeof import('./src/utils/uniapi/prompt'))['Modal'];
+    const HideLoading: (typeof import('../src/utils/uniapi/prompt'))['HideLoading'];
+    const HideToast: (typeof import('../src/utils/uniapi/prompt'))['HideToast'];
+    const Loading: (typeof import('../src/utils/uniapi/prompt'))['Loading'];
+    const Modal: (typeof import('../src/utils/uniapi/prompt'))['Modal'];
     const NavMethod: (typeof import('uni-mini-router'))['NavMethod'];
     const NavTypeEnum: (typeof import('uni-mini-router'))['NavTypeEnum'];
-    const NumberEnum: (typeof import('./src/enums/numberEnum'))['NumberEnum'];
-    const PLATFORMS: (typeof import('./src/enums/platformEnum'))['PLATFORMS'];
-    const ResultEnum: (typeof import('./src/enums/httpEnum'))['ResultEnum'];
-    const Toast: (typeof import('./src/utils/uniapi/prompt'))['Toast'];
+    const NumberEnum: (typeof import('../src/enums/numberEnum'))['NumberEnum'];
+    const PLATFORMS: (typeof import('../src/enums/platformEnum'))['PLATFORMS'];
+    const ResultEnum: (typeof import('../src/enums/httpEnum'))['ResultEnum'];
+    const Toast: (typeof import('../src/utils/uniapi/prompt'))['Toast'];
     const computed: (typeof import('vue'))['computed'];
     const createApp: (typeof import('vue'))['createApp'];
     const createRouter: (typeof import('uni-mini-router'))['createRouter'];
@@ -27,25 +27,23 @@ declare global {
     const defineAsyncComponent: (typeof import('vue'))['defineAsyncComponent'];
     const defineComponent: (typeof import('vue'))['defineComponent'];
     const effectScope: (typeof import('vue'))['effectScope'];
-    const getAdBanner: (typeof import('./src/services/api/home'))['getAdBanner'];
-    const getBanner: (typeof import('./src/services/api/home'))['getBanner'];
+    const getAdBanner: (typeof import('../src/services/api/home'))['getAdBanner'];
     const getCurrentInstance: (typeof import('vue'))['getCurrentInstance'];
     const getCurrentScope: (typeof import('vue'))['getCurrentScope'];
     const getCurrentWatcher: (typeof import('vue'))['getCurrentWatcher'];
-    const getGoods: (typeof import('./src/services/api/home'))['getGoods'];
-    const getGoodsCategory: (typeof import('./src/services/api/home'))['getGoodsCategory'];
-    const goodsItems: (typeof import('./src/services/api/home'))['goodsItems'];
-    const goodsRecommend: (typeof import('./src/services/api/home'))['goodsRecommend'];
+    const getGoodsCategory: (typeof import('../src/services/api/home'))['getGoodsCategory'];
+    const goodsItems: (typeof import('../src/services/api/home'))['goodsItems'];
+    const goodsRecommend: (typeof import('../src/services/api/home'))['goodsRecommend'];
     const h: (typeof import('vue'))['h'];
-    const hotSearchTerms: (typeof import('./src/services/api/home'))['hotSearchTerms'];
+    const hotSearchTerms: (typeof import('../src/services/api/home'))['hotSearchTerms'];
     const inject: (typeof import('vue'))['inject'];
     const isProxy: (typeof import('vue'))['isProxy'];
     const isReactive: (typeof import('vue'))['isReactive'];
     const isReadonly: (typeof import('vue'))['isReadonly'];
     const isRef: (typeof import('vue'))['isRef'];
     const isShallow: (typeof import('vue'))['isShallow'];
-    const login: (typeof import('./src/services/api/auth'))['login'];
-    const logout: (typeof import('./src/services/api/auth'))['logout'];
+    const login: (typeof import('../src/services/api/auth'))['login'];
+    const logout: (typeof import('../src/services/api/auth'))['logout'];
     const markRaw: (typeof import('vue'))['markRaw'];
     const nextTick: (typeof import('vue'))['nextTick'];
     const onActivated: (typeof import('vue'))['onActivated'];
@@ -90,8 +88,8 @@ declare global {
     const reactive: (typeof import('vue'))['reactive'];
     const readonly: (typeof import('vue'))['readonly'];
     const ref: (typeof import('vue'))['ref'];
-    const refreshAccessToken: (typeof import('./src/services/api/auth'))['refreshAccessToken'];
-    const register: (typeof import('./src/services/api/auth'))['register'];
+    const refreshAccessToken: (typeof import('../src/services/api/auth'))['refreshAccessToken'];
+    const register: (typeof import('../src/services/api/auth'))['register'];
     const resolveComponent: (typeof import('vue'))['resolveComponent'];
     const shallowReactive: (typeof import('vue'))['shallowReactive'];
     const shallowReadonly: (typeof import('vue'))['shallowReadonly'];
@@ -102,20 +100,20 @@ declare global {
     const toValue: (typeof import('vue'))['toValue'];
     const triggerRef: (typeof import('vue'))['triggerRef'];
     const unref: (typeof import('vue'))['unref'];
-    const useAddressStore: (typeof import('./src/stores/modules/address'))['useAddressStore'];
+    const useAddressStore: (typeof import('../src/stores/modules/address'))['useAddressStore'];
     const useAttrs: (typeof import('vue'))['useAttrs'];
-    const useAuthStore: (typeof import('./src/stores/modules/auth'))['useAuthStore'];
-    const useCartStore: (typeof import('./src/stores/modules/cart'))['useCartStore'];
-    const useCouponsStore: (typeof import('./src/stores/modules/coupon'))['useCouponsStore'];
+    const useAuthStore: (typeof import('../src/stores/modules/auth'))['useAuthStore'];
+    const useCartStore: (typeof import('../src/stores/modules/cart'))['useCartStore'];
+    const useCouponsStore: (typeof import('../src/stores/modules/coupon'))['useCouponsStore'];
     const useCssModule: (typeof import('vue'))['useCssModule'];
     const useCssVars: (typeof import('vue'))['useCssVars'];
-    const useGetWindowInfo: (typeof import('./src/hooks/useGetWindowInfo'))['useGetWindowInfo'];
-    const useGlobalStyle: (typeof import('./src/hooks/useGlobalStyle'))['useGlobalStyle'];
+    const useGetWindowInfo: (typeof import('../src/hooks/useGetWindowInfo'))['useGetWindowInfo'];
+    const useGlobalStyle: (typeof import('../src/hooks/useGlobalStyle'))['useGlobalStyle'];
     const useId: (typeof import('vue'))['useId'];
     const useModel: (typeof import('vue'))['useModel'];
     const useRoute: (typeof import('uni-mini-router'))['useRoute'];
     const useRouter: (typeof import('uni-mini-router'))['useRouter'];
-    const useSearchStore: (typeof import('./src/stores/modules/search'))['useSearchStore'];
+    const useSearchStore: (typeof import('../src/stores/modules/search'))['useSearchStore'];
     const useSlots: (typeof import('vue'))['useSlots'];
     const useTemplateRef: (typeof import('vue'))['useTemplateRef'];
     const watch: (typeof import('vue'))['watch'];
@@ -147,33 +145,33 @@ declare global {
     } from 'vue';
     import('vue');
     // @ts-ignore
-    export type { LoginDto, RefreshDto, RegisterDto } from './src/services/dto/auth';
-    import('./src/services/dto/auth');
+    export type { LoginDto, RefreshDto, RegisterDto } from '../src/services/dto/auth';
+    import('../src/services/dto/auth');
     // @ts-ignore
-    export type { PageDto } from './src/services/dto/conmmon';
-    import('./src/services/dto/conmmon');
+    export type { PageDto } from '../src/services/dto/conmmon';
+    import('../src/services/dto/conmmon');
     // @ts-ignore
-    export type { GoodsItemsDto } from './src/services/dto/home';
-    import('./src/services/dto/home');
+    export type { GoodsItemsDto } from '../src/services/dto/home';
+    import('../src/services/dto/home');
     // @ts-ignore
-    export type { LoginVo } from './src/services/vo/auth';
-    import('./src/services/vo/auth');
+    export type { LoginVo } from '../src/services/vo/auth';
+    import('../src/services/vo/auth');
     // @ts-ignore
-    export type { BaseResponse } from './src/services/vo/conmmon';
-    import('./src/services/vo/conmmon');
+    export type { BaseResponse } from '../src/services/vo/conmmon';
+    import('../src/services/vo/conmmon');
     // @ts-ignore
-    export type { BannerVo, GoodsCategoryVo, RecommendVo, GoodsVo, GoodsItemsVo } from './src/services/vo/home';
-    import('./src/services/vo/home');
+    export type { BannerVo, GoodsCategoryVo, RecommendVo, GoodsVo, GoodsItemsVo } from '../src/services/vo/home';
+    import('../src/services/vo/home');
     // @ts-ignore
-    export type { ResultEnum, ContentTypeEnum } from './src/enums/httpEnum';
-    import('./src/enums/httpEnum');
+    export type { ResultEnum, ContentTypeEnum } from '../src/enums/httpEnum';
+    import('../src/enums/httpEnum');
     // @ts-ignore
-    export type { NumberEnum } from './src/enums/numberEnum';
-    import('./src/enums/numberEnum');
+    export type { NumberEnum } from '../src/enums/numberEnum';
+    import('../src/enums/numberEnum');
     // @ts-ignore
-    export type { PLATFORMS } from './src/enums/platformEnum';
-    import('./src/enums/platformEnum');
+    export type { PLATFORMS } from '../src/enums/platformEnum';
+    import('../src/enums/platformEnum');
     // @ts-ignore
-    export type { CartType } from './src/stores/modules/cart';
-    import('./src/stores/modules/cart');
+    export type { CartType } from '../src/stores/modules/cart';
+    import('../src/stores/modules/cart');
 }
