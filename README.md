@@ -40,6 +40,10 @@ pnpm up
 npx @dcloudio/uvm 3.7.2.20230217-alpha
 ```
 
+## 项目预览
+
+[预览](http://cdn.xierongsheng.cn/1.mp4)
+
 ## 特性
 
 - **最新技术栈**：使用 Vue3/Vite/pinia ,TypeScript 等前端前沿技术开发;
