@@ -1,6 +1,6 @@
 ## 项目预览
 
-
+[预览](http://cdn.xierongsheng.cn/1.mp4)
 
 ## 开发建议
 
@@ -39,10 +39,6 @@ pnpm up
 # 打开HBuilder X alpha桌面程序-->点击上面的帮助-->历次更新说明-->获取最新版本号（如：3.7.2.20230217-alpha）
 npx @dcloudio/uvm 3.7.2.20230217-alpha
 ```
-
-## 项目预览
-
-[预览](http://cdn.xierongsheng.cn/1.mp4)
 
 ## 特性
 
